@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<List xmlns:ows="Microsoft SharePoint" Title="CareersDetaisList" FolderCreation="FALSE" Direction="$Resources:Direction;" Url="Lists/CareersDetaisList" BaseType="0" xmlns="http://schemas.microsoft.com/sharepoint/">
+  <MetaData>
+    <ContentTypes>
+      
+      
+    <ContentType ID="0x0100650c86e9451d470181159269561bc907" Name="ListFieldsContentType"><FieldRefs><FieldRef ID="{fa564e0f-0c70-4ab9-b863-0177e6ddd247}" Name="Title" /><FieldRef ID="{72eaea14-f81f-4c84-b024-87fa236466de}" Name="EnglishTitle" /><FieldRef ID="{b434bed7-53c3-4b9c-a3a7-71fd41022ca1}" Name="JobDescription" /><FieldRef ID="{574e41d5-d8b5-499d-bd4a-ba2ad6574801}" Name="JobDescription1" /><FieldRef ID="{5c5f56e2-7b1e-470e-9940-abccf16cada7}" Name="JobID" /><FieldRef ID="{42c81e0e-7c93-4016-aacb-f541dcf8871a}" Name="Sector" /><FieldRef ID="{9e390d54-fee3-47d5-b4a7-13b034ce30e6}" Name="EnglishSector" /><FieldRef ID="{C814B2CF-84C6-4f56-B4A4-C766938A97C5}" Name="ol_Department" /><FieldRef ID="{e09ea118-ac4a-4097-b572-114dbd6e0faf}" Name="EnglishDepartment" /><FieldRef ID="{f4d953cc-5d01-470e-96b4-c8c133938931}" Name="Goal" /><FieldRef ID="{af9c7195-b69f-4a00-b608-11c68cd0a97d}" Name="EnglishGoal" /><FieldRef ID="{aa7b9422-4bf2-48bc-946b-c6faee44b462}" Name="Experience" /><FieldRef ID="{4fb49783-b779-4e71-bf4d-c7c205c58942}" Name="EnglishExperience" /><FieldRef ID="{bba9b3c0-c499-4b4b-8099-963063c041b1}" Name="Education" /><FieldRef ID="{00cbede9-de5e-4f55-afc9-f33739d7f01d}" Name="EnglishEducation" /><FieldRef ID="{332bf6f0-f33b-49b3-84e8-214967d4fb2a}" Name="Skills" /><FieldRef ID="{cc317cb9-952e-497f-9249-2d0a028b78e3}" Name="EnglishSkills" /></FieldRefs></ContentType><ContentTypeRef ID="0x01">
+        <Folder TargetName="Item" />
+      </ContentTypeRef><ContentTypeRef ID="0x0120" /></ContentTypes>
+    <Fields>
+      
+    <Field ID="{fa564e0f-0c70-4ab9-b863-0177e6ddd247}" Type="Text" Name="Title" DisplayName="$Resources:core,Title;" Required="TRUE" SourceID="http://schemas.microsoft.com/sharepoint/v3" StaticName="Title" MaxLength="255" /><Field ID="{72eaea14-f81f-4c84-b024-87fa236466de}" Name="EnglishTitle" DisplayName="English Title" Type="Text" Required="FALSE" Group="SEDA Custom Site Columns" /><Field Name="JobDescription" ID="{b434bed7-53c3-4b9c-a3a7-71fd41022ca1}" DisplayName="Job Description" Type="Note" /><Field Name="JobDescription1" ID="{574e41d5-d8b5-499d-bd4a-ba2ad6574801}" DisplayName="English Job Description" Type="Note" /><Field Name="JobID" ID="{5c5f56e2-7b1e-470e-9940-abccf16cada7}" DisplayName="Job ID" Type="Lookup" /><Field Name="Sector" ID="{42c81e0e-7c93-4016-aacb-f541dcf8871a}" DisplayName="Sector" Type="Text" /><Field Name="EnglishSector" ID="{9e390d54-fee3-47d5-b4a7-13b034ce30e6}" DisplayName="English Sector" Type="Text" /><Field ID="{C814B2CF-84C6-4f56-B4A4-C766938A97C5}" Name="ol_Department" StaticName="ol_Department" SourceID="http://schemas.microsoft.com/sharepoint/v3" DisplayName="$Resources:core,Department_OL;" Group="$Resources:core,Person_Event_Columns;" Type="Text" Sealed="TRUE" AllowDeletion="TRUE" /><Field Name="EnglishDepartment" ID="{e09ea118-ac4a-4097-b572-114dbd6e0faf}" DisplayName="English Department" Type="Text" /><Field Name="Goal" ID="{f4d953cc-5d01-470e-96b4-c8c133938931}" DisplayName="Goal" Type="Note" /><Field Name="EnglishGoal" ID="{af9c7195-b69f-4a00-b608-11c68cd0a97d}" DisplayName="English Goal" Type="Note" /><Field Name="Experience" ID="{aa7b9422-4bf2-48bc-946b-c6faee44b462}" DisplayName="Experience" Type="Text" /><Field Name="EnglishExperience" ID="{4fb49783-b779-4e71-bf4d-c7c205c58942}" DisplayName="English Experience" Type="Text" /><Field Name="Education" ID="{bba9b3c0-c499-4b4b-8099-963063c041b1}" DisplayName="Education" Type="Text" /><Field Name="EnglishEducation" ID="{00cbede9-de5e-4f55-afc9-f33739d7f01d}" DisplayName="English Education" Type="Text" /><Field Name="Skills" ID="{332bf6f0-f33b-49b3-84e8-214967d4fb2a}" DisplayName="Skills" Type="Text" /><Field Name="EnglishSkills" ID="{cc317cb9-952e-497f-9249-2d0a028b78e3}" DisplayName="English Skills" Type="Text" /></Fields>
+    <Views>
+      
+      
+    <View BaseViewID="0" Type="HTML" MobileView="TRUE" TabularView="FALSE">
+        <Toolbar Type="Standard" />
+        <XslLink Default="TRUE">main.xsl</XslLink>
+        <RowLimit Paged="TRUE">30</RowLimit>
+        <ViewFields>
+          
+        <FieldRef Name="LinkTitleNoMenu"></FieldRef></ViewFields>
+        <Query>
+          <OrderBy>
+            
+          <FieldRef Name="Modified" Ascending="FALSE"></FieldRef></OrderBy>
+        </Query>
+        <ParameterBindings>
+          <ParameterBinding Name="AddNewAnnouncement" Location="Resource(wss,addnewitem)" />
+          <ParameterBinding Name="NoAnnouncements" Location="Resource(wss,noXinviewofY_LIST)" />
+          <ParameterBinding Name="NoAnnouncementsHowTo" Location="Resource(wss,noXinviewofY_ONET_HOME)" />
+        </ParameterBindings>
+      </View><View BaseViewID="1" Type="HTML" WebPartZoneID="Main" DisplayName="$Resources:core,objectiv_schema_mwsidcamlidC24;" DefaultView="TRUE" MobileView="TRUE" MobileDefaultView="TRUE" SetupPath="pages\viewpage.aspx" ImageUrl="/_layouts/15/images/generic.png?rev=23" Url="AllItems.aspx">
+        <Toolbar Type="Standard" />
+        <XslLink Default="TRUE">main.xsl</XslLink>
+        <JSLink>clienttemplates.js</JSLink>
+        <RowLimit Paged="TRUE">30</RowLimit>
+        <ViewFields>
+          
+        <FieldRef Name="LinkTitle"></FieldRef><FieldRef Name="EnglishTitle" /><FieldRef Name="JobDescription" /><FieldRef Name="JobDescription1" /><FieldRef Name="JobID" /><FieldRef Name="Sector" /><FieldRef Name="EnglishSector" /><FieldRef Name="ol_Department" /><FieldRef Name="EnglishDepartment" /><FieldRef Name="Goal" /><FieldRef Name="EnglishGoal" /><FieldRef Name="Experience" /><FieldRef Name="EnglishExperience" /><FieldRef Name="Education" /><FieldRef Name="EnglishEducation" /><FieldRef Name="Skills" /><FieldRef Name="EnglishSkills" /></ViewFields>
+        <Query>
+          <OrderBy>
+            
+          <FieldRef Name="ID"></FieldRef></OrderBy>
+        </Query>
+        <ParameterBindings>
+          <ParameterBinding Name="NoAnnouncements" Location="Resource(wss,noXinviewofY_LIST)" />
+          <ParameterBinding Name="NoAnnouncementsHowTo" Location="Resource(wss,noXinviewofY_DEFAULT)" />
+        </ParameterBindings>
+      </View></Views>
+    <Forms>
+      <Form Type="DisplayForm" Url="DispForm.aspx" SetupPath="pages\form.aspx" WebPartZoneID="Main" />
+      <Form Type="EditForm" Url="EditForm.aspx" SetupPath="pages\form.aspx" WebPartZoneID="Main" />
+      <Form Type="NewForm" Url="NewForm.aspx" SetupPath="pages\form.aspx" WebPartZoneID="Main" />
+    </Forms>
+  </MetaData>
+</List>

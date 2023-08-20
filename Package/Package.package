@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="5d77299e-630d-4df3-abdc-3b914b4edf6c" solutionId="5d77299e-630d-4df3-abdc-3b914b4edf6c" resetWebServer="false" sharePointProductVersion="16.0" name="SEDA.Careers" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
+  <features>
+    <featureReference itemId="05d24b01-2646-4730-a478-4e6432844dd6" />
+    <featureReference itemId="f0bc4e6f-20ea-4722-8e50-c215da5b8137" />
+    <featureReference itemId="81c5370c-42eb-4251-8081-b9a5683b7b18" />
+    <featureReference itemId="f503a389-f744-4774-a92d-a441435d3fef" />
+    <featureReference itemId="1a0dd56f-c0ea-428f-88a0-f1a108228247" />
+    <featureReference itemId="1c6e5eee-ffb8-4adf-96d2-5929fc5eedc8" />
+    <featureReference itemId="f421da24-d271-4d94-9178-62462f6e1a9a" />
+    <featureReference itemId="7f165255-c30f-48b4-8f99-0f75906cf334" />
+    <featureReference itemId="67e6d47e-95fd-46fc-bd08-06308ff9d2fe" />
+    <featureReference itemId="b5ea7c86-96b3-4180-8004-c1a8c631a9b9" />
+    <featureReference itemId="bdc30634-98ac-4d7e-a708-66dd75b5bf29" />
+    <featureReference itemId="3f138cac-1955-49ae-977a-e1dafebbf32d" />
+    <featureReference itemId="7fddc164-731c-4034-be95-42d2d775d53d" />
+  </features>
+  <projectItems>
+    <projectItemReference itemId="cfef8d80-0a29-41d3-86a6-632ca09f22af" />
+  </projectItems>
+</package>

@@ -1,0 +1,322 @@
+﻿<Project ToolsVersion="16.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0B5FB085-2676-49AE-B9C2-8F7A55BB417E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SEDA.Careers</RootNamespace>
+    <AssemblyName>SEDA.Careers</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetOfficeVersion>16.0</TargetOfficeVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{C1CDDADD-2546-481F-9697-4EA41081F2FC};{14822709-B5A1-4724-98CA-57A101D1B079};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <MinimumVisualStudioVersion>14.0</MinimumVisualStudioVersion>
+    <MinimumOfficeToolsVersion>14.0</MinimumOfficeToolsVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <SandboxedSolution>False</SandboxedSolution>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.SharePoint" />
+    <Reference Include="Microsoft.SharePoint.Client.ServerRuntime" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Entities\Education.cs" />
+    <Compile Include="Entities\Experience.cs" />
+    <Compile Include="Entities\Language.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WebParts\CareersDetails\CareersDetails.cs" />
+    <Compile Include="WebParts\CareersDetails\CareersDetailsUserControl.ascx.cs">
+      <DependentUpon>CareersDetailsUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebParts\CareersDetails\CareersDetailsUserControl.ascx.designer.cs">
+      <DependentUpon>CareersDetailsUserControl.ascx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WebParts\CareersListing\CareersListing.cs" />
+    <Compile Include="WebParts\CareersListing\CareersListingUserControl.ascx.cs">
+      <DependentUpon>CareersListingUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebParts\CareersListing\CareersListingUserControl.ascx.designer.cs">
+      <DependentUpon>CareersListingUserControl.ascx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WebParts\Careers\Careers.cs" />
+    <Compile Include="WebParts\Careers\CareersUserControl.ascx.cs">
+      <DependentUpon>CareersUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebParts\Careers\CareersUserControl.ascx.designer.cs">
+      <DependentUpon>CareersUserControl.ascx.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Features\CareersPage\CareersPage.feature">
+      <FeatureId>{05d24b01-2646-4730-a478-4e6432844dd6}</FeatureId>
+    </None>
+    <None Include="Features\CareersWebPart\CareersWebPart.feature">
+      <FeatureId>{f0bc4e6f-20ea-4722-8e50-c215da5b8137}</FeatureId>
+    </None>
+    <None Include="Features\SEDA.CareersDetaisList\SEDA.CareersDetaisList.feature">
+      <FeatureId>{7fddc164-731c-4034-be95-42d2d775d53d}</FeatureId>
+    </None>
+    <None Include="Features\SEDA.CounrtyList\SEDA.CounrtyList.feature">
+      <FeatureId>{3f138cac-1955-49ae-977a-e1dafebbf32d}</FeatureId>
+    </None>
+    <None Include="Features\SEDA.EducationList\SEDA.EducationList.feature">
+      <FeatureId>{67e6d47e-95fd-46fc-bd08-06308ff9d2fe}</FeatureId>
+    </None>
+    <None Include="Features\SEDA.ExperiencesList\SEDA.ExperiencesList.feature">
+      <FeatureId>{b5ea7c86-96b3-4180-8004-c1a8c631a9b9}</FeatureId>
+    </None>
+    <None Include="Features\SEDA.LanguagesMainList\SEDA.LanguagesMainList.feature">
+      <FeatureId>{bdc30634-98ac-4d7e-a708-66dd75b5bf29}</FeatureId>
+    </None>
+    <None Include="Features\SEDA.PersonalInformationList\SEDA.PersonalInformationList.feature">
+      <FeatureId>{7f165255-c30f-48b4-8f99-0f75906cf334}</FeatureId>
+    </None>
+    <None Include="Features\SEDA.LocationList\SEDA.LocationList.feature">
+      <FeatureId>{f421da24-d271-4d94-9178-62462f6e1a9a}</FeatureId>
+    </None>
+    <None Include="Features\SEDA.DegreeList\SEDA.DegreeList.feature">
+      <FeatureId>{81c5370c-42eb-4251-8081-b9a5683b7b18}</FeatureId>
+    </None>
+    <None Include="Features\SEDA.MajorList\SEDA.MajorList.feature">
+      <FeatureId>{f503a389-f744-4774-a92d-a441435d3fef}</FeatureId>
+    </None>
+    <None Include="Features\SEDA.LanguagesList\SEDA.LanguagesList.feature">
+      <FeatureId>{1a0dd56f-c0ea-428f-88a0-f1a108228247}</FeatureId>
+    </None>
+    <None Include="Features\SEDA.ProficiencyList\SEDA.ProficiencyList.feature">
+      <FeatureId>{1c6e5eee-ffb8-4adf-96d2-5929fc5eedc8}</FeatureId>
+    </None>
+    <None Include="key.snk" />
+    <None Include="Lists\CareersDetaisList\CareersDetaisListInstance\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{4599dc14-d398-4f66-8102-3b03b334a164}</SharePointProjectItemId>
+    </None>
+    <None Include="Lists\CareersDetaisList\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{816c12f8-d345-48a5-8fbf-ed1c24df2673}</SharePointProjectItemId>
+    </None>
+    <None Include="Lists\CounrtyList\CounrtyListInstance\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{c4b5421e-df70-4700-88e2-552b5a2b0fde}</SharePointProjectItemId>
+    </None>
+    <None Include="Lists\CounrtyList\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{d388dde3-fa49-4921-b844-b916e0878047}</SharePointProjectItemId>
+    </None>
+    <None Include="Lists\DegreeList\DegreeInstance\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{9591d527-2526-44ea-b4cb-c3ccac739f3e}</SharePointProjectItemId>
+    </None>
+    <None Include="Lists\DegreeList\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{e81a511d-2a53-4987-bb07-fe12e6d761a8}</SharePointProjectItemId>
+    </None>
+    <None Include="Lists\EducationList\EducationListInstance\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{655da061-6d9e-4c33-aede-0ab6c062e752}</SharePointProjectItemId>
+    </None>
+    <None Include="Lists\EducationList\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{f5adc60b-4b5c-4af5-b70d-8b30f82eb3c1}</SharePointProjectItemId>
+    </None>
+    <None Include="Lists\ExperiencesList\ExperiencesListInstance\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{c4434d62-4528-423a-92d0-9fb9190e4a05}</SharePointProjectItemId>
+    </None>
+    <None Include="Lists\ExperiencesList\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{7014924e-ec17-4add-a4de-312365970368}</SharePointProjectItemId>
+    </None>
+    <None Include="Lists\LanguagesList\LanguagesInstance\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{50f9f5c9-ab05-4a25-9c4c-6b26fe4ae6f9}</SharePointProjectItemId>
+    </None>
+    <None Include="Lists\LanguagesList\LanguagesListInstance\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{c2ffa874-0668-4b85-b5d7-7d1c7c548cbd}</SharePointProjectItemId>
+    </None>
+    <None Include="Lists\LanguagesList\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{40db2bbf-5d09-4f7a-8813-27104538d346}</SharePointProjectItemId>
+    </None>
+    <None Include="Lists\LanguagesMainList\LanguagesMainListInstance\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{867368ae-17f5-4a6a-bf3f-f8ccd3566a93}</SharePointProjectItemId>
+    </None>
+    <None Include="Lists\LanguagesMainList\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{1d46b400-21e2-4143-b8f4-21d997b446f2}</SharePointProjectItemId>
+    </None>
+    <None Include="Lists\LocationList\LocationInstance\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{56ccb045-432e-435a-9ebf-bd1f978f2298}</SharePointProjectItemId>
+    </None>
+    <None Include="Lists\LocationList\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{1f561a2a-0485-422f-8dd2-2fe70f93d822}</SharePointProjectItemId>
+    </None>
+    <None Include="Lists\MajorList\MajorInstance\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{fedabbbe-6085-4d7e-902e-c0bf08a9897c}</SharePointProjectItemId>
+    </None>
+    <None Include="Lists\MajorList\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{a63a12ec-dd54-4d75-82c7-db85acd07a9b}</SharePointProjectItemId>
+    </None>
+    <None Include="Lists\PersonalInformationList\PersonalInformationListInstance\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{5e84ef17-ef1a-4478-9dec-9cd1074bb78b}</SharePointProjectItemId>
+    </None>
+    <None Include="Lists\PersonalInformationList\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{d1bafc60-67cd-4768-819a-c1e375396a6f}</SharePointProjectItemId>
+    </None>
+    <None Include="Lists\ProficiencyList\ProficiencyInstance\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{38a40e6e-c181-4fe8-b313-2ddb1407a97f}</SharePointProjectItemId>
+    </None>
+    <None Include="Lists\ProficiencyList\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{4ff67349-ac07-4df5-bf4d-1f17072a8f77}</SharePointProjectItemId>
+    </None>
+    <None Include="Modules\CareerPage\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{ed316129-11f6-4b3e-b72e-d4e8998edd85}</SharePointProjectItemId>
+    </None>
+    <None Include="Package\Package.package">
+      <PackageId>{5d77299e-630d-4df3-abdc-3b914b4edf6c}</PackageId>
+    </None>
+    <None Include="Package\Package.Template.xml">
+      <DependentUpon>Package.package</DependentUpon>
+    </None>
+    <None Include="Resources\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{cfef8d80-0a29-41d3-86a6-632ca09f22af}</SharePointProjectItemId>
+    </None>
+    <None Include="WebParts\CareersDetails\CareersDetails.webpart" />
+    <None Include="WebParts\CareersDetails\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{9ab577ef-3fdd-4612-852c-ac377a139263}</SharePointProjectItemId>
+    </None>
+    <None Include="WebParts\CareersListing\CareersListing.webpart" />
+    <None Include="WebParts\CareersListing\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{a7018f32-9a44-46db-9cc1-b518cba8197f}</SharePointProjectItemId>
+    </None>
+    <None Include="WebParts\Careers\Careers.webpart" />
+    <None Include="WebParts\Careers\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{efecc882-58c8-4b5e-92e8-28a6140ac028}</SharePointProjectItemId>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Features\CareersPage\CareersPage.Template.xml">
+      <DependentUpon>CareersPage.feature</DependentUpon>
+    </Content>
+    <Content Include="Features\CareersWebPart\CareersWebPart.Template.xml">
+      <DependentUpon>CareersWebPart.feature</DependentUpon>
+    </Content>
+    <Content Include="Features\SEDA.CareersDetaisList\SEDA.CareersDetaisList.Template.xml">
+      <DependentUpon>SEDA.CareersDetaisList.feature</DependentUpon>
+    </Content>
+    <Content Include="Features\SEDA.CounrtyList\SEDA.CounrtyList.Template.xml">
+      <DependentUpon>SEDA.CounrtyList.feature</DependentUpon>
+    </Content>
+    <Content Include="Features\SEDA.EducationList\SEDA.EducationList.Template.xml">
+      <DependentUpon>SEDA.EducationList.feature</DependentUpon>
+    </Content>
+    <Content Include="Features\SEDA.ExperiencesList\SEDA.ExperiencesList.Template.xml">
+      <DependentUpon>SEDA.ExperiencesList.feature</DependentUpon>
+    </Content>
+    <Content Include="Features\SEDA.LanguagesMainList\SEDA.LanguagesMainList.Template.xml">
+      <DependentUpon>SEDA.LanguagesMainList.feature</DependentUpon>
+    </Content>
+    <Content Include="Features\SEDA.PersonalInformationList\SEDA.PersonalInformationList.Template.xml">
+      <DependentUpon>SEDA.PersonalInformationList.feature</DependentUpon>
+    </Content>
+    <Content Include="Features\SEDA.LocationList\SEDA.LocationList.Template.xml">
+      <DependentUpon>SEDA.LocationList.feature</DependentUpon>
+    </Content>
+    <Content Include="Features\SEDA.DegreeList\SEDA.DegreeList.Template.xml">
+      <DependentUpon>SEDA.DegreeList.feature</DependentUpon>
+    </Content>
+    <Content Include="Features\SEDA.MajorList\SEDA.MajorList.Template.xml">
+      <DependentUpon>SEDA.MajorList.feature</DependentUpon>
+    </Content>
+    <Content Include="Features\SEDA.LanguagesList\SEDA.LanguagesList.Template.xml">
+      <DependentUpon>SEDA.LanguagesList.feature</DependentUpon>
+    </Content>
+    <Content Include="Features\SEDA.ProficiencyList\SEDA.ProficiencyList.Template.xml">
+      <DependentUpon>SEDA.ProficiencyList.feature</DependentUpon>
+    </Content>
+    <Content Include="Lists\CareersDetaisList\CareersDetaisListInstance\Elements.xml" />
+    <Content Include="Lists\CareersDetaisList\Elements.xml" />
+    <Content Include="Lists\CareersDetaisList\Schema.xml" />
+    <Content Include="Lists\CounrtyList\CounrtyListInstance\Elements.xml" />
+    <Content Include="Lists\CounrtyList\Elements.xml" />
+    <Content Include="Lists\CounrtyList\Schema.xml" />
+    <Content Include="Lists\DegreeList\DegreeInstance\Elements.xml" />
+    <Content Include="Lists\DegreeList\Elements.xml" />
+    <Content Include="Lists\DegreeList\Schema.xml" />
+    <Content Include="Lists\EducationList\EducationListInstance\Elements.xml" />
+    <Content Include="Lists\EducationList\Elements.xml" />
+    <Content Include="Lists\EducationList\Schema.xml" />
+    <Content Include="Lists\ExperiencesList\Elements.xml" />
+    <Content Include="Lists\ExperiencesList\ExperiencesListInstance\Elements.xml" />
+    <Content Include="Lists\ExperiencesList\Schema.xml" />
+    <Content Include="Lists\LanguagesList\Elements.xml" />
+    <Content Include="Lists\LanguagesList\LanguagesInstance\Elements.xml" />
+    <Content Include="Lists\LanguagesList\Schema.xml" />
+    <Content Include="Lists\LanguagesMainList\Elements.xml" />
+    <Content Include="Lists\LanguagesMainList\LanguagesMainListInstance\Elements.xml" />
+    <Content Include="Lists\LanguagesMainList\Schema.xml" />
+    <Content Include="Lists\LocationList\Elements.xml" />
+    <Content Include="Lists\LocationList\LocationInstance\Elements.xml" />
+    <Content Include="Lists\LocationList\Schema.xml" />
+    <Content Include="Lists\MajorList\Elements.xml" />
+    <Content Include="Lists\MajorList\MajorInstance\Elements.xml" />
+    <Content Include="Lists\MajorList\Schema.xml" />
+    <Content Include="Lists\PersonalInformationList\Elements.xml" />
+    <Content Include="Lists\PersonalInformationList\PersonalInformationListInstance\Elements.xml" />
+    <Content Include="Lists\PersonalInformationList\Schema.xml" />
+    <Content Include="Lists\ProficiencyList\Elements.xml" />
+    <Content Include="Lists\ProficiencyList\ProficiencyInstance\Elements.xml" />
+    <Content Include="Lists\ProficiencyList\Schema.xml" />
+    <Content Include="Modules\CareerPage\Elements.xml" />
+    <Content Include="Modules\CareerPage\PageTemplate.aspx" />
+    <Content Include="WebParts\CareersDetails\CareersDetailsUserControl.ascx" />
+    <Content Include="WebParts\CareersDetails\Elements.xml" />
+    <Content Include="WebParts\CareersListing\CareersListingUserControl.ascx" />
+    <Content Include="WebParts\CareersListing\Elements.xml" />
+    <Content Include="WebParts\Careers\CareersUserControl.ascx" />
+    <Content Include="WebParts\Careers\Elements.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\SEDA_Careers.ar-SA.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Resources\SEDA_Careers.en-US.resx">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(VSToolsPath)\SharePointTools\Microsoft.VisualStudio.SharePoint.targets" Condition="'$(VSToolsPath)' != ''" />
+</Project>

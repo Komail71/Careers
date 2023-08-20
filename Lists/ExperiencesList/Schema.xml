@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<List xmlns:ows="Microsoft SharePoint" Title="ExperiencesList" FolderCreation="FALSE" Direction="$Resources:Direction;" Url="Lists/ExperiencesList" BaseType="0" xmlns="http://schemas.microsoft.com/sharepoint/">
+  <MetaData>
+    <ContentTypes>
+      
+      
+    <ContentType ID="0x0100fb44ac15235145cc97933b71f03b10b9" Name="ListFieldsContentType"><FieldRefs><FieldRef ID="{fa564e0f-0c70-4ab9-b863-0177e6ddd247}" Name="Title" /><FieldRef ID="{f2fe10e8-fc42-4c0f-8db3-8bacadc07703}" Name="HaveExperience" /><FieldRef ID="{45a12707-ab39-4634-a3fc-d48474deaf56}" Name="Location" /><FieldRef ID="{15eb82eb-1577-4890-8ae3-58675ccaa0df}" Name="CompanyName" /><FieldRef ID="{01ba6ddd-525f-4557-ba7f-d19c675608f2}" Name="JobDescription" /><FieldRef ID="{d3d498fd-a7b0-4582-9633-2eb2b2f01bfa}" Name="StartDate" /><FieldRef ID="{b0945ffa-f6bb-4baa-890a-b16d163657b2}" Name="EndDate" /><FieldRef ID="{8fb5a7fd-2251-4721-806a-8e64fdfbc528}" Name="City" /><FieldRef ID="{41f77522-ef1c-4d30-8e17-fe21ef05af63}" Name="JobTitle" /><FieldRef ID="{8c78a93a-f805-4b5a-a05a-3cf0adecfe3a}" Name="ExperienceDetailes" /></FieldRefs></ContentType><ContentTypeRef ID="0x01">
+        <Folder TargetName="Item" />
+      </ContentTypeRef><ContentTypeRef ID="0x0120" /></ContentTypes>
+    <Fields>
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	<Field ID="{fa564e0f-0c70-4ab9-b863-0177e6ddd247}" Type="Text" Name="Title" DisplayName="$Resources:core,Title;" Required="TRUE" SourceID="http://schemas.microsoft.com/sharepoint/v3" StaticName="Title" MaxLength="255" /><Field Name="HaveExperience" ID="{f2fe10e8-fc42-4c0f-8db3-8bacadc07703}" DisplayName="HaveExperience" Type="Choice" Required="TRUE" /><Field Name="Location" ID="{45a12707-ab39-4634-a3fc-d48474deaf56}" DisplayName="Location" Type="Lookup" Required="TRUE" List="CounrtyList" ShowField="Title" /><Field Name="CompanyName" ID="{15eb82eb-1577-4890-8ae3-58675ccaa0df}" DisplayName="CompanyName" Type="Text" Required="TRUE" /><Field Name="JobDescription" ID="{01ba6ddd-525f-4557-ba7f-d19c675608f2}" DisplayName="JobDescription" Type="Note" Required="TRUE" /><Field Name="StartDate" ID="{d3d498fd-a7b0-4582-9633-2eb2b2f01bfa}" DisplayName="StartDate" Type="DateTime" Required="TRUE" /><Field Name="EndDate" ID="{b0945ffa-f6bb-4baa-890a-b16d163657b2}" DisplayName="EndDate" Type="DateTime" Required="TRUE" /><Field Name="City" ID="{8fb5a7fd-2251-4721-806a-8e64fdfbc528}" DisplayName="City" Type="Text" Required="TRUE" /><Field Name="JobTitle" ID="{41f77522-ef1c-4d30-8e17-fe21ef05af63}" DisplayName="JobTitle" Type="Text" Required="TRUE" /><Field Name="ExperienceDetailes" ID="{8c78a93a-f805-4b5a-a05a-3cf0adecfe3a}" DisplayName="ExperienceDetailes" Type="Lookup" List="Lists/PersonalInformationList" ShowField="Title" Required="TRUE" /></Fields>
+    <Views>
+ 
+    <View BaseViewID="0" Type="HTML" MobileView="TRUE" TabularView="FALSE">
+        <Toolbar Type="Standard" />
+        <XslLink Default="TRUE">main.xsl</XslLink>
+        <RowLimit Paged="TRUE">30</RowLimit>
+        <ViewFields>
+          
+        <FieldRef Name="LinkTitleNoMenu"></FieldRef></ViewFields>
+        <Query>
+          <OrderBy>
+            
+          <FieldRef Name="Modified" Ascending="FALSE"></FieldRef></OrderBy>
+        </Query>
+        <ParameterBindings>
+          <ParameterBinding Name="AddNewAnnouncement" Location="Resource(wss,addnewitem)" />
+          <ParameterBinding Name="NoAnnouncements" Location="Resource(wss,noXinviewofY_LIST)" />
+          <ParameterBinding Name="NoAnnouncementsHowTo" Location="Resource(wss,noXinviewofY_ONET_HOME)" />
+        </ParameterBindings>
+      </View><View BaseViewID="1" Type="HTML" WebPartZoneID="Main" DisplayName="$Resources:core,objectiv_schema_mwsidcamlidC24;" DefaultView="TRUE" MobileView="TRUE" MobileDefaultView="TRUE" SetupPath="pages\viewpage.aspx" ImageUrl="/_layouts/15/images/generic.png?rev=23" Url="AllItems.aspx">
+        <Toolbar Type="Standard" />
+        <XslLink Default="TRUE">main.xsl</XslLink>
+        <JSLink>clienttemplates.js</JSLink>
+        <RowLimit Paged="TRUE">30</RowLimit>
+        <ViewFields>
+          
+        <FieldRef Name="LinkTitle"></FieldRef><FieldRef Name="HaveExperience" /><FieldRef Name="StartDate" /><FieldRef Name="EndDate" /><FieldRef Name="Location" /><FieldRef Name="City" /><FieldRef Name="CompanyName" /><FieldRef Name="JobTitle" /><FieldRef Name="JobDescription" /><FieldRef Name="ExperienceDetailes" /></ViewFields>
+        <Query>
+          <OrderBy>
+            
+          <FieldRef Name="ID"></FieldRef></OrderBy>
+        </Query>
+        <ParameterBindings>
+          <ParameterBinding Name="NoAnnouncements" Location="Resource(wss,noXinviewofY_LIST)" />
+          <ParameterBinding Name="NoAnnouncementsHowTo" Location="Resource(wss,noXinviewofY_DEFAULT)" />
+        </ParameterBindings>
+      </View></Views>
+    <Forms>
+      <Form Type="DisplayForm" Url="DispForm.aspx" SetupPath="pages\form.aspx" WebPartZoneID="Main" />
+      <Form Type="EditForm" Url="EditForm.aspx" SetupPath="pages\form.aspx" WebPartZoneID="Main" />
+      <Form Type="NewForm" Url="NewForm.aspx" SetupPath="pages\form.aspx" WebPartZoneID="Main" />
+    </Forms>
+  </MetaData>
+</List>

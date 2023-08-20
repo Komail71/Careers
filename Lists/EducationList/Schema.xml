@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<List xmlns:ows="Microsoft SharePoint" Title="EducationList" FolderCreation="FALSE" Direction="$Resources:Direction;" Url="Lists/EducationList" BaseType="0" xmlns="http://schemas.microsoft.com/sharepoint/">
+  <MetaData>
+    <ContentTypes>
+      
+      
+    <ContentType ID="0x0100efe8f741da5443b397ed18646aea0f52" Name="ListFieldsContentType"><FieldRefs>
+		<FieldRef ID="{fa564e0f-0c70-4ab9-b863-0177e6ddd247}" Name="Title" /><FieldRef ID="{cba1d36f-ee85-485b-8546-59388eaae44a}" Name="Degree" />
+		<FieldRef ID="{ec895b0a-7117-4fa1-b0a7-ac2ddeb7dc10}" Name="Counrty" /><FieldRef ID="{d5c5f8a7-7a1b-4bdf-8ff5-b702a95d2c22}" Name="University" />
+		<FieldRef ID="{caf8e082-960b-441d-8ee5-0d5246d107df}" Name="Major" /><FieldRef ID="{d1f92345-94eb-4abb-be38-b92184e03348}" Name="GPA" />
+		<FieldRef ID="{6d248672-25e2-4013-ab1f-e659b1e9c364}" Name="GPAtxt" /><FieldRef ID="{56c29f57-cd28-4215-bd0c-cf88a15cd9b6}" Name="GraduationDate" />
+		<FieldRef ID="{33bd4295-4d47-48b9-b9c4-804ad153647c}" Name="WorkCity" /><FieldRef ID="{501e63ca-7847-4647-944c-e03689a728bc}" Name="Description" />
+		<FieldRef ID="{70ea6a57-dc32-4b20-8b21-9b897e9479b8}" Name="EducationDetailed" /></FieldRefs></ContentType><ContentTypeRef ID="0x01">
+        <Folder TargetName="Item" />
+      </ContentTypeRef><ContentTypeRef ID="0x0120" /></ContentTypes>
+    <Fields>			
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	<Field ID="{fa564e0f-0c70-4ab9-b863-0177e6ddd247}" Type="Text" Name="Title" DisplayName="$Resources:core,Title;" Required="TRUE" SourceID="http://schemas.microsoft.com/sharepoint/v3" StaticName="Title" MaxLength="255" />
+		<Field Name="Degree" ID="{cba1d36f-ee85-485b-8546-59388eaae44a}" DisplayName="Degree" Type="Lookup" Required="TRUE" List="Lists/Degree" ShowField="Title" />
+		<Field Name="Counrty" ID="{ec895b0a-7117-4fa1-b0a7-ac2ddeb7dc10}" DisplayName="Counrty" Type="Lookup" Required="TRUE" List="Lists/CounrtyList" ShowField="Title" />
+		<Field Name="University" ID="{d5c5f8a7-7a1b-4bdf-8ff5-b702a95d2c22}" DisplayName="University" Type="Text" Required="TRUE" />
+		<Field Name="Major" ID="{caf8e082-960b-441d-8ee5-0d5246d107df}" DisplayName="Major" Type="Text" Required="TRUE" />
+		<Field Name="GPA" ID="{d1f92345-94eb-4abb-be38-b92184e03348}" DisplayName="GPA" Type="Choice" Required="TRUE" />
+		<Field Name="GPAtxt" ID="{6d248672-25e2-4013-ab1f-e659b1e9c364}" DisplayName="GPAnum" Type="Text" Required="TRUE" />
+		<Field Name="GraduationDate" ID="{56c29f57-cd28-4215-bd0c-cf88a15cd9b6}" DisplayName="GraduationDate " Type="DateTime" Required="TRUE" />
+		<Field Name="WorkCity" ID="{33bd4295-4d47-48b9-b9c4-804ad153647c}" DisplayName="WorkCity" Type="Text" Required="TRUE" />
+		<Field Name="Description" ID="{501e63ca-7847-4647-944c-e03689a728bc}" DisplayName="Description" Type="Note" Required="TRUE" />
+		<Field Name="EducationDetailed" ID="{70ea6a57-dc32-4b20-8b21-9b897e9479b8}" DisplayName="EducationDetailes" Type="Lookup" List="Lists/PersonalInformationList" ShowField="Title" Required="TRUE" /></Fields>
+    <Views>
+      
+      
+    <View BaseViewID="0" Type="HTML" MobileView="TRUE" TabularView="FALSE">
+        <Toolbar Type="Standard" />
+        <XslLink Default="TRUE">main.xsl</XslLink>
+        <RowLimit Paged="TRUE">30</RowLimit>
+        <ViewFields>
+          
+        <FieldRef Name="LinkTitleNoMenu"></FieldRef></ViewFields>
+        <Query>
+          <OrderBy>
+            
+          <FieldRef Name="Modified" Ascending="FALSE"></FieldRef></OrderBy>
+        </Query>
+        <ParameterBindings>
+          <ParameterBinding Name="AddNewAnnouncement" Location="Resource(wss,addnewitem)" />
+          <ParameterBinding Name="NoAnnouncements" Location="Resource(wss,noXinviewofY_LIST)" />
+          <ParameterBinding Name="NoAnnouncementsHowTo" Location="Resource(wss,noXinviewofY_ONET_HOME)" />
+        </ParameterBindings>
+      </View><View BaseViewID="1" Type="HTML" WebPartZoneID="Main" DisplayName="$Resources:core,objectiv_schema_mwsidcamlidC24;" DefaultView="TRUE" MobileView="TRUE" MobileDefaultView="TRUE" SetupPath="pages\viewpage.aspx" ImageUrl="/_layouts/15/images/generic.png?rev=23" Url="AllItems.aspx">
+        <Toolbar Type="Standard" />
+        <XslLink Default="TRUE">main.xsl</XslLink>
+        <JSLink>clienttemplates.js</JSLink>
+        <RowLimit Paged="TRUE">30</RowLimit>
+        <ViewFields>
+          
+        <FieldRef Name="LinkTitle"></FieldRef><FieldRef Name="Degree" /><FieldRef Name="Counrty" /><FieldRef Name="WorkCity" /><FieldRef Name="University" /><FieldRef Name="Major" /><FieldRef Name="GPA" /><FieldRef Name="GPAtxt" /><FieldRef Name="GraduationDate" /><FieldRef Name="Description" /><FieldRef Name="EducationDetailed" /></ViewFields>
+        <Query>
+          <OrderBy>
+            
+          <FieldRef Name="ID"></FieldRef></OrderBy>
+        </Query>
+        <ParameterBindings>
+          <ParameterBinding Name="NoAnnouncements" Location="Resource(wss,noXinviewofY_LIST)" />
+          <ParameterBinding Name="NoAnnouncementsHowTo" Location="Resource(wss,noXinviewofY_DEFAULT)" />
+        </ParameterBindings>
+      </View></Views>
+    <Forms>
+      <Form Type="DisplayForm" Url="DispForm.aspx" SetupPath="pages\form.aspx" WebPartZoneID="Main" />
+      <Form Type="EditForm" Url="EditForm.aspx" SetupPath="pages\form.aspx" WebPartZoneID="Main" />
+      <Form Type="NewForm" Url="NewForm.aspx" SetupPath="pages\form.aspx" WebPartZoneID="Main" />
+    </Forms>
+  </MetaData>
+</List>

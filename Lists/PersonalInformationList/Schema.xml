@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<List xmlns:ows="Microsoft SharePoint" Title="PersonalInformationList" FolderCreation="FALSE" Direction="$Resources:Direction;" Url="Lists/PersonalInformationList" BaseType="0" xmlns="http://schemas.microsoft.com/sharepoint/">
+  <MetaData>
+    <ContentTypes>
+      
+      
+    <ContentType ID="0x0100d3cc7ae7507d403cbd321d83154463b2" Name="ListFieldsContentType"><FieldRefs><FieldRef ID="{fa564e0f-0c70-4ab9-b863-0177e6ddd247}" Name="Title" /><FieldRef ID="{cbf6576d-b3f7-4796-ae9f-1a46bcc5d7db}" Name="Nationality" /><FieldRef ID="{5f6a021c-45fc-49b2-8665-d65154cac842}" Name="PhoneNumber" /><FieldRef ID="{1d979019-0977-442d-8b6c-6c747c5649bc}" Name="AnotherPhonenumber" /><FieldRef ID="{01ac1b5d-7318-4a75-931f-d5c9e08ecf10}" Name="Email" /><FieldRef ID="{30bd95f1-bb17-41f4-8b22-a87f1bceb885}" Name="Personallocation" /><FieldRef ID="{b358b140-3371-4ed2-9f03-4ef43c40cd87}" Name="LastMonthlySalary" /><FieldRef ID="{f12874c1-c6c0-4ade-b4d6-ab8fe7ed7f0f}" Name="TargetMonthlySalary" /><FieldRef ID="{0c818581-0044-4268-8cac-26c3ede33172}" Name="Gender" /><FieldRef ID="{ca47f95f-b36b-4992-892b-46a909da9cd0}" Name="DateofBirth" /><FieldRef ID="{2430dd5b-fecd-4afd-a6f0-f26994a9fe92}" Name="FirstName" /><FieldRef ID="{62de1616-0dad-4c02-8751-29d698704117}" Name="LastName" /></FieldRefs></ContentType><ContentTypeRef ID="0x01">
+        <Folder TargetName="Item" />
+      </ContentTypeRef><ContentTypeRef ID="0x0120" /></ContentTypes>
+    <Fields>
+		
+	<Field ID="{fa564e0f-0c70-4ab9-b863-0177e6ddd247}" Type="Text" Name="Title" DisplayName="$Resources:core,Title;" Required="TRUE" SourceID="http://schemas.microsoft.com/sharepoint/v3" StaticName="Title" MaxLength="255" />
+		<Field Name="Nationality" ID="{cbf6576d-b3f7-4796-ae9f-1a46bcc5d7db}" DisplayName="Nationality " Type="Choice" Required="TRUE" />
+		<Field Name="PhoneNumber" ID="{5f6a021c-45fc-49b2-8665-d65154cac842}" DisplayName="PhoneNumber" Type="Text" Required="TRUE" />
+		<Field Name="AnotherPhonenumber" ID="{1d979019-0977-442d-8b6c-6c747c5649bc}" DisplayName="AnotherPhoneNumber" Type="Text" />
+		<Field Name="Email" ID="{01ac1b5d-7318-4a75-931f-d5c9e08ecf10}" DisplayName="Email" Type="Text" Required="TRUE" />
+		<Field Name="Personallocation" ID="{30bd95f1-bb17-41f4-8b22-a87f1bceb885}" DisplayName="PersonalLocation" Type="Lookup" Required="TRUE" List="Lists/Location" ShowField="Title"/>
+		<Field Name="LastMonthlySalary" ID="{b358b140-3371-4ed2-9f03-4ef43c40cd87}" DisplayName="LastMonthlySalary " Type="Number" Required="TRUE" />
+		<Field Name="TargetMonthlySalary" ID="{f12874c1-c6c0-4ade-b4d6-ab8fe7ed7f0f}" DisplayName="TargetMonthlySalary" Type="Number" Required="TRUE" />
+		<Field Name="Gender" ID="{0c818581-0044-4268-8cac-26c3ede33172}" DisplayName="Gender" Type="Choice" Required="TRUE" />
+		<Field Name="DateofBirth" ID="{ca47f95f-b36b-4992-892b-46a909da9cd0}" DisplayName="DateofBirth" Type="DateTime" Required="TRUE" />
+		<Field Name="FirstName" ID="{2430dd5b-fecd-4afd-a6f0-f26994a9fe92}" DisplayName="FirstName" Type="Text" Required="TRUE" />
+		<Field Name="LastName" ID="{62de1616-0dad-4c02-8751-29d698704117}" DisplayName="LastName" Type="Text" Required="TRUE" />
+	</Fields>
+    <Views>
+      
+      
+    <View BaseViewID="0" Type="HTML" MobileView="TRUE" TabularView="FALSE">
+        <Toolbar Type="Standard" />
+        <XslLink Default="TRUE">main.xsl</XslLink>
+        <RowLimit Paged="TRUE">30</RowLimit>
+        <ViewFields>
+          
+        <FieldRef Name="LinkTitleNoMenu"></FieldRef></ViewFields>
+        <Query>
+          <OrderBy>
+            
+          <FieldRef Name="Modified" Ascending="FALSE"></FieldRef></OrderBy>
+        </Query>
+        <ParameterBindings>
+          <ParameterBinding Name="AddNewAnnouncement" Location="Resource(wss,addnewitem)" />
+          <ParameterBinding Name="NoAnnouncements" Location="Resource(wss,noXinviewofY_LIST)" />
+          <ParameterBinding Name="NoAnnouncementsHowTo" Location="Resource(wss,noXinviewofY_ONET_HOME)" />
+        </ParameterBindings>
+      </View><View BaseViewID="1" Type="HTML" WebPartZoneID="Main" DisplayName="$Resources:core,objectiv_schema_mwsidcamlidC24;" DefaultView="TRUE" MobileView="TRUE" MobileDefaultView="TRUE" SetupPath="pages\viewpage.aspx" ImageUrl="/_layouts/15/images/generic.png?rev=23" Url="AllItems.aspx">
+        <Toolbar Type="Standard" />
+        <XslLink Default="TRUE">main.xsl</XslLink>
+        <JSLink>clienttemplates.js</JSLink>
+        <RowLimit Paged="TRUE">30</RowLimit>
+        <ViewFields>
+          
+        <FieldRef Name="LinkTitle"></FieldRef><FieldRef Name="Nationality" /><FieldRef Name="PhoneNumber" /><FieldRef Name="AnotherPhonenumber" /><FieldRef Name="Email" /><FieldRef Name="Personallocation" /><FieldRef Name="LastMonthlySalary" /><FieldRef Name="TargetMonthlySalary" /><FieldRef Name="DateofBirth" /><FieldRef Name="LastName" /></ViewFields>
+        <Query>
+          <OrderBy>
+            
+          <FieldRef Name="ID"></FieldRef></OrderBy>
+        </Query>
+        <ParameterBindings>
+          <ParameterBinding Name="NoAnnouncements" Location="Resource(wss,noXinviewofY_LIST)" />
+          <ParameterBinding Name="NoAnnouncementsHowTo" Location="Resource(wss,noXinviewofY_DEFAULT)" />
+        </ParameterBindings>
+      </View></Views>
+    <Forms>
+      <Form Type="DisplayForm" Url="DispForm.aspx" SetupPath="pages\form.aspx" WebPartZoneID="Main" />
+      <Form Type="EditForm" Url="EditForm.aspx" SetupPath="pages\form.aspx" WebPartZoneID="Main" />
+      <Form Type="NewForm" Url="NewForm.aspx" SetupPath="pages\form.aspx" WebPartZoneID="Main" />
+    </Forms>
+  </MetaData>
+</List>

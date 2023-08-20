@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <Module Name="Pages" Url="Pages">
+    <File Path="CareerPage\PageTemplate.aspx" Url="default.aspx" Type="GhostableInLibrary" Level="Published" IgnoreIfAlreadyExists="true" ReplaceContent="true">
+      <Property Name="Title" Value="$Resources:SEDA_Careers,CareersPageTitle;"/>
+      <Property Name="PublishingPageLayout" Value="~SiteCollection/_catalogs/masterpage/WelcomeLinks.aspx, $Resources:SEDA_Branding,InternalPageLayout;"/>
+      <AllUsersWebPart WebPartOrder ="0" WebPartZoneID ="TopZone">
+        <![CDATA[
+         <?xml version="1.0" encoding="utf-8"?>
+<webParts>
+  <webPart xmlns="http://schemas.microsoft.com/WebPart/v3">
+    <metaData>
+      <type name="SEDA.Careers.WebParts.Careers.Careers, $SharePoint.Project.AssemblyFullName$" />
+      <importErrorMessage>$Resources:core,ImportErrorMessage;</importErrorMessage>
+    </metaData>
+    <data>
+      <properties>
+        <property name="Title" type="string">SEDA.Careers - Careers</property>
+        <property name="Description" type="string">My Visual Web Part</property>
+      </properties>
+    </data>
+  </webPart>
+</webParts>
+        ]]>
+      </AllUsersWebPart>
+     
+    </File>
+  </Module>
+</Elements>
